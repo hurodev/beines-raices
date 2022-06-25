@@ -1,0 +1,20 @@
+.boton-amarillo{
+    @include boton($amarillo);
+}
+
+.boton-amarillo-inblock{
+    @include boton($amarillo);
+    text-align: center
+   
+}
+
+
+
+.boton-verde{
+    @include boton($verde);
+}
+
+
+
+
+

@@ -1,0 +1,61 @@
+
+
+ .inicio{ 
+     background-image:url(../../../../bienesraices/build/img/header.webp);
+     background-image:url(../../../../bienesraices/build/img/header.jpg);
+    
+}
+
+
+.header{
+    padding: 1rem 0 3rem 0;
+    background-color: $grisOscuro;
+
+
+
+
+
+    &.inicio{
+        background-position: center center;
+        background-size: cover;
+        min-height: 70rem;
+       
+
+
+      
+
+    
+}
+}
+
+
+.contenido-header-inicio{
+
+    @include tablet{
+        
+        min-height: 70rem;
+    }
+
+    h1{
+        text-align: left;
+        color: $blanco;
+        font-weight: $bold;
+        max-width: 55rem;
+
+}
+}
+
+
+
+.contenido-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+   
+        }
+
+
+
+
