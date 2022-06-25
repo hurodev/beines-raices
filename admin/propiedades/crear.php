@@ -12,7 +12,7 @@ $errores = [];
 // consutar vendedores
 
 $consulta = "SELECT * FROM vendedores";
-$resultado = mysqli_query($db,$consulta);
+$resultadovendedor = mysqli_query($db,$consulta);
 
 
 
@@ -30,6 +30,7 @@ $habitaciones = $_POST['habitaciones'];
 $wc = $_POST['wc'];
 $estacionamiento = $_POST['estacionamiento'];
 $vendedor = $_POST ['vendedor'];
+
 
 if(!$titulo){
     $errores[] = "debes de añadir un titulo";
@@ -53,9 +54,11 @@ if(!$vendedor){
     $errores[] = "Elige un vendedor";
 }
 
-/* echo "<pre>";
+
+
+echo "<pre>";
 var_dump($errores);
-echo "</pre>"; */
+echo "</pre>";
 
 
 
@@ -75,9 +78,9 @@ VALUES ('$titulo', '$precio', '$descripcion', '$habitaciones', '$wc', '$estacion
         echo "Insertado correctamente";
     };
 
-    echo "<pre>";
+    /* echo "<pre>";
     var_dump($query);
-    echo "</pre>";
+    echo "</pre>"; */
 
 
 
@@ -141,7 +144,7 @@ require '../../includes/funciones.php';
 
 
         <label for="descripcion">Descripcion</label>    
-        <textarea name="descripcion" id="descripcion" cols="30" rows="10" > <?php echo $descripcion; ?></textarea>
+        <textarea name="descripcion" id="descripcion" cols="30" rows="10" > </textarea>
     </fieldset>
     
 
@@ -168,8 +171,10 @@ require '../../includes/funciones.php';
 
             <option value="">--Seleccione un vendedor--</option>
     
-            <?php while($vendedor = mysqli_fetch_assoc($resultado)): ?>
-                <option value="<?php echo $vendedor['id'];?>"><?php echo $vendedor['nombre']." ".$vendedor['apellido'] ?></option>
+            <?php while($vendedor = mysqli_fetch_assoc($resultadovendedor)): ?>
+                <option <?php echo  $vendedor['id'] ? 'selected': ''; ?>
+                value="<?php echo $vendedor['id'];?>"><?php echo $vendedor['nombre']." ".$vendedor['apellido'] ?>
+                </option>
             <?php endwhile; ?>
 
         </select>
